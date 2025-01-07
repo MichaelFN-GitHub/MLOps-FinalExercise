@@ -14,7 +14,7 @@ def test_my_dataset():
 '''
 
 def test():
-    #train_set, test_set = corrupt_mnist()
+    corrupt_mnist()
     assert isinstance(1, int)
     #assert isinstance(train_set, tuple) and len(train_set) == 2 and isinstance(train_set[0], Dataset) and isinstance(train_set[1], Dataset)
     #assert isinstance(test_set, tuple) and len(test_set) == 2 and isinstance(test_set[0], Dataset) and isinstance(test_set[1], Dataset)

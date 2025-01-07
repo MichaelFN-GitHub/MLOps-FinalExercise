@@ -79,7 +79,7 @@ def python_command(ctx):
     ctx.run("which python" if os.name != "nt" else "where python")
 
 @task
-def git(ctx, message):
+def git(ctx, message: Annotated[str, typer.Option("--message", "-m")]):
     ctx.run(f"git add .")
     ctx.run(f"git commit -m \"{message}\"")  # Double quotes around message
     ctx.run(f"git push")

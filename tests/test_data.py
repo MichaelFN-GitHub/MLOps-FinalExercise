@@ -1,3 +1,7 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from torch.utils.data import Dataset
 
 from mlops_final_exercise.data import corrupt_mnist

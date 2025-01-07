@@ -1,5 +1,6 @@
 import torch
 import typer
+
 from data import corrupt_mnist
 from mlops_final_exercise.model import MyAwesomeModel
 

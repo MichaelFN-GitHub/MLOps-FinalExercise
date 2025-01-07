@@ -1,6 +1,8 @@
 import os
 
 from invoke import Context, task
+from typing import Annotated
+import typer
 
 WINDOWS = os.name == "nt"
 PROJECT_NAME = "mlops_final_exercise"
@@ -70,3 +72,14 @@ def build_docs(ctx: Context) -> None:
 def serve_docs(ctx: Context) -> None:
     """Serve documentation."""
     ctx.run("mkdocs serve --config-file docs/mkdocs.yaml", echo=True, pty=not WINDOWS)
+
+@task
+def python_command(ctx):
+    """Prints the python path"""
+    ctx.run("which python" if os.name != "nt" else "where python")
+
+@task
+def git(ctx, message):
+    ctx.run(f"git add .")
+    ctx.run(f"git commit -m \"{message}\"")  # Double quotes around message
+    ctx.run(f"git push")

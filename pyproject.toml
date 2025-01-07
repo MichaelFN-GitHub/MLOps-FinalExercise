@@ -26,3 +26,6 @@ select = ["I"]
 
 [tool.coverage.run]
 omit = ["tests/*"]
+
+[project.scripts]
+train = "mlops_final_exercise.train:main"

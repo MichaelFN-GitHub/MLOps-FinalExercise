@@ -1,24 +1,24 @@
 import os
 import sys
+import pytest
 
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
 
 from mlops_final_exercise.data import corrupt_mnist
 from torch.utils.data import Dataset
 
-'''
-from mlops_final_exercise.data import MyDataset
+#@pytest.mark.skipif(not os.path.exists(file_path), reason="Data files not found")
+# I am testing the wrong function here.
+def test_data():
+    n_train = 30000
+    n_test = 5000
 
-
-def test_my_dataset():
-    """Test the MyDataset class."""
-    dataset = MyDataset("data/raw")
-    assert isinstance(dataset, Dataset)
-'''
-
-
-def test():
-    corrupt_mnist()
-    assert isinstance(1, int)
-    # assert isinstance(train_set, tuple) and len(train_set) == 2 and isinstance(train_set[0], Dataset) and isinstance(train_set[1], Dataset)
-    # assert isinstance(test_set, tuple) and len(test_set) == 2 and isinstance(test_set[0], Dataset) and isinstance(test_set[1], Dataset)
+    train_set, test_set = corrupt_mnist()
+    assert len(train_set) == n_train, "Expected 30000 samples in the training set"
+    assert len(test_set) == n_test, "Expected 5000 samples in the test set"
+    for i in range(n_train):
+        assert train_set[i][0].shape in [(1, 28, 28), (784,)], "Expected each sample to have shape [1, 28, 28]"
+        assert train_set[i][1] in range(10), "Expected target to be in range [0, 9]"
+    for i in range(n_test):
+        assert test_set[i][0].shape in [(1, 28, 28), (784,)], "Expected each sample to have shape [1, 28, 28]"
+        assert test_set[i][1] in range(10), "Expected target to be in range [0, 9]"

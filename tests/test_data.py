@@ -1,13 +1,16 @@
 import os
 import sys
+
 import pytest
 
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
 
-from mlops_final_exercise.data import corrupt_mnist
 from torch.utils.data import Dataset
 
-#@pytest.mark.skipif(not os.path.exists(file_path), reason="Data files not found")
+from mlops_final_exercise.data import corrupt_mnist
+
+
+# @pytest.mark.skipif(not os.path.exists(file_path), reason="Data files not found")
 # I am testing the wrong function here.
 def test_data():
     n_train = 30000

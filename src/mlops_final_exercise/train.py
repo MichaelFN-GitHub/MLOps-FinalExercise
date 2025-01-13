@@ -1,12 +1,11 @@
 import matplotlib.pyplot as plt
 import torch
 import typer
-import wandb
-
-from mlops_final_exercise.data import corrupt_mnist
-from mlops_final_exercise.model import MyAwesomeModel
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
+import wandb
+from mlops_final_exercise.data import corrupt_mnist
+from mlops_final_exercise.model import MyAwesomeModel
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu")
 
@@ -68,7 +67,6 @@ def train(lr: float = 1e-4, batch_size: int = 32, epochs: int = 3) -> None:
 
         # ROC CURVE HERE IF YOU WANT TO ADD IT
 
-
     print("Training complete")
 
     final_accuracy = accuracy_score(targets, preds.argmax(dim=1))
@@ -93,8 +91,10 @@ def train(lr: float = 1e-4, batch_size: int = 32, epochs: int = 3) -> None:
     axs[1].set_title("Train accuracy")
     fig.savefig("reports/figures/training_statistics.png")
 
+
 def main():
     typer.run(train)
+
 
 if __name__ == "__main__":
     typer.run(train)

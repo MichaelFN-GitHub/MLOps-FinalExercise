@@ -15,7 +15,7 @@ def train(lr: float = 1e-4, batch_size: int = 32, epochs: int = 3) -> None:
     """Train a model on MNIST."""
     print("Training day and night")
     print(f"{lr=}, {batch_size=}, {epochs=}")
-    
+
     # Initialize logging
     run = wandb.init(
         project="corrupt_mnist",

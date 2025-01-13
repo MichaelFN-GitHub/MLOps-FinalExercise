@@ -29,3 +29,4 @@ omit = ["tests/*"]
 
 [project.scripts]
 train = "mlops_final_exercise.train:main"
+evaluate = "mlops_final_exercise.evaluate:main"

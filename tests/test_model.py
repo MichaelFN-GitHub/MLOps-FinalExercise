@@ -2,7 +2,6 @@ import re
 
 import pytest
 import torch
-
 from mlops_final_exercise.model import MyAwesomeModel
 
 

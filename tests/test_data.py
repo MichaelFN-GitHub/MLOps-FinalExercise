@@ -5,9 +5,8 @@ import pytest
 
 sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "src"))
 
-from torch.utils.data import Dataset
-
 from mlops_final_exercise.data import corrupt_mnist
+from torch.utils.data import Dataset
 
 
 # @pytest.mark.skipif(not os.path.exists(file_path), reason="Data files not found")

@@ -1,9 +1,9 @@
 import matplotlib.pyplot as plt
 import torch
 import typer
-import wandb
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
+import wandb
 from mlops_final_exercise.data import corrupt_mnist
 from mlops_final_exercise.model import MyAwesomeModel
 

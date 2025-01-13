@@ -1,6 +1,6 @@
 import torch
-import wandb
 
+import wandb
 from mlops_final_exercise.model import MyAwesomeModel
 
 run = wandb.init()

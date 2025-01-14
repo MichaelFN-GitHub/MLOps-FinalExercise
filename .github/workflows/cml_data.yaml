@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         make dev_requirements
-        pip install --upgrade dvc[all]==3.59.0
+        pip install --upgrade dvc[all]==3.58.0
         pip install certifi
         pip list
     - name: Auth with GCP

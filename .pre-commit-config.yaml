@@ -10,10 +10,10 @@ repos:
     -   id: check-added-large-files
     -   id: check-json
 
-#-   repo: https://github.com/astral-sh/ruff-pre-commit
-#    rev: v0.4.7
-#    hooks:
-#    -   id: ruff
-#        args: ["--fix"] # perform formatting updates
-#    -   id: ruff-format # validate if all is fine with preview mode
-#    -   id: ruff
+-   repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.7
+    hooks:
+    -   id: ruff
+        args: ["--fix"] # perform formatting updates
+    -   id: ruff-format # validate if all is fine with preview mode
+    -   id: ruff

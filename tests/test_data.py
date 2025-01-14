@@ -10,7 +10,6 @@ from torch.utils.data import Dataset
 
 
 # @pytest.mark.skipif(not os.path.exists(file_path), reason="Data files not found")
-# I am testing the wrong function here.
 def test_data():
     n_train = 30000
     n_test = 5000

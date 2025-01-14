@@ -11,5 +11,5 @@ timm
 mypy
 ruff
 dvc
-gs-dvc
+dvc-gs
 wandb
